@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header th:replace ="layout::site-header" >
+    <title>Register</title>
+</header>
+<body>
+<form method="post" th:object="${registerForm}" >
+    <!--username-->
+    <div>
+        <lable for="username">Username:</lable>
+    </div>
+    <input id="username" type="text" name="username" th:value="*{username}" />
+    <!--password-->
+    <div>
+        <label for="password" th:value="*{password}">Password:</label>
+    </div>
+    <input id="password" type="password" name="password" th:value="*{password}" />
+
+    <!--dobule confirm password -->
+    <div>
+        <label for="doublepassword" th:value="*{password}">Double Confirm Password:</label>
+    </div>
+    <input id="doublepassword" type="password" name="dpassword" th:value="*{password}" />
+
+    <div><input type="submit" value="register" /></div>
+</form>
+<footer th:replace="layout::site-footer"></footer>
+</body>
+</html>
